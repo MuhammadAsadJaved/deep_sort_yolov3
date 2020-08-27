@@ -20,9 +20,16 @@ from yolo3.utils import letterbox_image
 
 class YOLO(object):
     def __init__(self):
-        self.model_path = 'model_data/yolo.h5'
+           #For yolov3 
+        self.model_path = './model_data/yolo.h5'
         self.anchors_path = 'model_data/yolo_anchors.txt'
         self.classes_path = 'model_data/coco_classes.txt'
+        
+        #For Tiny-yolov3 uncomment next three lines and comment above three lines
+        #self.model_path = './model_data/yolov3-tiny.h5'
+        #self.anchors_path = 'model_data/tiny_yolo_anchors.txt'
+        #self.classes_path = 'model_data/coco_classes.txt'
+        
         self.score = 0.5
         self.iou = 0.5
         self.class_names = self._get_class()
